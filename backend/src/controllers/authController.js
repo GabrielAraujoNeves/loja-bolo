@@ -14,7 +14,7 @@ const registre = async (req, res) => {
 
         const user = await createUser(email, hashedPassword, username);
 
-        res.status(201).json({ message: 'Usuario Registrado', user});
+        res.status(201).json({ message: 'Usuario Registrado, coom sucesso!', user});
     } catch (error) {
         res.status(500).json({ message: 'Server error', error });
     }
