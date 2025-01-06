@@ -50,11 +50,13 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: Colors.black,
         foregroundColor: Colors.amber[800],
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            const SizedBox(height: 50), // Espaço inicial para centralizar melhor
             TextField(
               controller: _emailController,
               style: const TextStyle(color: Colors.white),
@@ -105,18 +107,21 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(height: 20),
-            TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/register');
-              },
-              child: const Text(
-                'Não tem uma conta? Registre-se',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
+            Center(
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/register');
+                },
+                child: const Text(
+                  'Não tem uma conta? Registre-se',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
                 ),
               ),
             ),
+            const SizedBox(height: 50), // Espaço final para evitar overflow
           ],
         ),
       ),
